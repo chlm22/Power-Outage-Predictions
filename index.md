@@ -18,16 +18,12 @@
 ### This chart shows some of the columns from the dataset that I will be using to answer my question!
 | Columns from Power Outage Dataset     | Description    |
 | --------------------------------------| -------------- |
-| **U.S._STATE** | Represents all the states in the continental U.S. |
-| **CAUSE.CATEGORY**  | Categories of all the events causing the major power outages  |
-| **OUTAGE.DURATION** | Duration of outage events (in minutes) |
-| **CUSTOMERS.AFFECTED** | Number of customers affected by the power outage event |
-| **TOTAL.CUSTOMERS** | Annual number of total customers served in the U.S. state |
----
+| **U.S._STATE**                        | Represents all the states in the continental U.S. |
+| **CAUSE.CATEGORY**                    | Categories of all the events causing the major power outages  |
+| **OUTAGE.DURATION**                   | Duration of outage events (in minutes) |
+| **CUSTOMERS.AFFECTED**                | Number of customers affected by the power outage event |
+| **TOTAL.CUSTOMERS**                   | Annual number of total customers served in the U.S. state |
 
-| Syntax | Description |
-| ----------- | ----------- |
-| Header | Title |
-| Paragraph | Text |
+---
 
 ### Introduction
