@@ -5,9 +5,8 @@
 ### We can essentially predict anything we want to know about this dataset ! 
 
 ### For this project, I will be predicting, 
-### I am curious if we can predict
-### the number of people affected by the power outage
-### by seeing the cause of the outage and duration of the outage
+I am curious if we can predict the number of people affected by the power outage
+ by seeing the cause of the outage and duration of the outage
 
 ---
 
