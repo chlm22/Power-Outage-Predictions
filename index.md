@@ -25,6 +25,9 @@
 | **TOTAL.CUSTOMERS** | Annual number of total customers served in the U.S. state |
 ---
 
-
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |
 
 ### Introduction
