@@ -1,5 +1,4 @@
-# Predicting 
-# with Power Outage Dataset
+# Predicting with Power Outage Dataset
 ## by Hae In Lee
 
 ### What are we predicting? 
