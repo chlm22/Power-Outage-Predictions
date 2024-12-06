@@ -42,9 +42,17 @@ print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
 
 <iframe
   src="assets/file-name.html"
-  width="800"
-  height="600"
+  width="500"
+  height="400"
   frameborder="0"
 ></iframe>
 
 ###
+
+|   CUSTOMERS.AFFECTED |   TOTAL.CUSTOMERS | CAUSE.CATEGORY     | U.S._STATE   |   POPULATION |
+|---------------------:|------------------:|:-------------------|:-------------|-------------:|
+|                70000 |       2.5957e+06  | severe weather     | Minnesota    |  5.34812e+06 |
+|                  nan |       2.64074e+06 | intentional attack | Minnesota    |  5.45712e+06 |
+|                70000 |       2.5869e+06  | severe weather     | Minnesota    |  5.3109e+06  |
+|                68200 |       2.60681e+06 | severe weather     | Minnesota    |  5.38044e+06 |
+|               250000 |       2.67353e+06 | severe weather     | Minnesota    |  5.48959e+06 |
