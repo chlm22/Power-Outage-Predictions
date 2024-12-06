@@ -42,8 +42,8 @@ print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
 
 <iframe
   src="assets/file-name.html"
-  width="500"
-  height="400"
+  width="1000"
+  height="800"
   frameborder="0"
 ></iframe>
 
