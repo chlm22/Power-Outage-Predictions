@@ -2,16 +2,19 @@
 ## by Hae In Lee
 
 ### What are we predicting? We can essentially predict anything we want to know about this dataset ! 
+## Before we dive into predicting anything, let's try to familiarize ourselves with the dataset using the following question:
+- Which cause category is most responsible for power outages in different states?
 
-### Before we dive into predicting anything, let's explore the dataset!
 ---
 
 # Introduction
 ## What is this dataset about? 
 This dataset comes from Purdue University's LASCI Research Data on Power Outages in the US, by state, from January 2000 to July 2016. It provides information on the geographical locations of these events, regional climate data, land-use patterns, electricity consumption trends, and the economic characteristics of the states impacted by these outages. 
 
-## Why is this dataset even worth looking at?
-This data can help identify and analyze past outage trends, which can help determine the outage and impact economic, social, and environmental trends. This can help improve the way we risk manage, respond and prepare for unforeseen events that can cause power outages. 
+## Why is this dataset even worth looking at? And how does it help answer our question?
+ The dataset is important for identifying trends in power outages and could help improve strategies for preventing and mitigating future disruptions.
+
+This question helps understand the causes of power outages can help states and utility companies make effective choices when power outages occur. They can focus on improving infrastructure in areas most affected by specific causes like strengthening power grids in regions prone to weather-related outages. They can create a comprehensive emergency response planning, since different situations may require different strategies. They can also plan resource allocation by helping states identify which outages are likely to have the most significant impact on the population.
 
 ## General overview of the dataset
 In total, there are 1534 rows and 55 columns (variables). 
@@ -85,3 +88,27 @@ This map allows users to visually assess which U.S. states experience the highes
   frameborder="0"
 ></iframe>
 This bivariate visualization is key to understanding how cause categories (like weather) and year correlate with the number of customers affected. The chart provides valuable context for predicting the impact of future outages and suggests that weather will likely continue to be a major factor in large-scale outages. The fluctuation in customer impact from human error and equipment failure might also help refine predictions, but the dominance of weather suggests that weather data could be a key predictor of customer impact.
+
+## Interesting Aggregates
+### Remember our initial question : Which cause category is most responsible for power outages in different states?
+To help us answer this after seeing the visualizations of our data, I thought it would be helpful to group 'CAUSE.CATEGORY' and 'U.S._STATES' columns, sum the 'CUSTOMERS.AFFECTED,' to see how many customers were affected by outages in each state, broken down by the cause of the outage.
+
+| CAUSE.CATEGORY    | U.S._STATE   |   CUSTOMERS.AFFECTED |
+|:------------------|:-------------|---------------------:|
+| equipment failure | AK           |      14273           |
+| equipment failure | AR           |          0           |
+| equipment failure | AZ           |     167000           |
+| equipment failure | CA           |          1.39026e+06 |
+| equipment failure | DE           |      18400           |
+
+
+Then, I pivoted the table to better analyze the relationship between the cause categories (e.g., Weather, Human Error, Equipment Failure) and the U.S. states, showing how each cause affects the number of customers in each state.
+
+
+|   equipment failure |   fuel supply emergency |   intentional attack |   islanding |   public | U.S._STATE   |   equipment failure |   fuel supply emergency |   intentional attack |   islanding |   public appeal |   severe weather |   system operability disruption |
+|:-------------|--------------------:|------------------------:|---------------------:|------------:|----------------:|-----------------:|--------------------------------:|
+| AK           |     14273           |                     nan |                  nan |         nan |             nan |    nan           |                   nan           |
+| AL           |       nan           |                     nan |                    0 |         nan |             nan | 471644           |                   nan           |
+| AR           |         0           |                     nan |                 9200 |           0 |           54094 | 556466           |                   nan           |
+| AZ           |    167000           |                     nan |                 2713 |         nan |             nan | 180911           |                229000           |
+| CA           |         1.39026e+06 |                       0 |               127920 |      131019 |               0 |      2.05794e+07 |                     3.34489e+06 |
