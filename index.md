@@ -62,7 +62,7 @@ I kept only seven columns, YEAR, U.S._STATE, OUTAGE.DURATION, CAUSE.CATEGORY, CU
 
 <iframe
   src="assets/causecatBarchart.html"
-  width="900"
+  width="1000"
   height="700"
   frameborder="0"
 ></iframe>
