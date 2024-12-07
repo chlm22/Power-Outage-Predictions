@@ -37,7 +37,7 @@ For our analysis purposes, we will only be looking at a couple of the variables
 
 ---
 
-# Dataset Cleaning 
+# Dataset Cleaning & Analysis
 To use the data from the columns, we first need to clean them up.
 
 First, I dropped all the columns I will not be using for the analysis. 
@@ -117,3 +117,11 @@ Then, I pivoted the table to better analyze the relationship between the cause c
 | AR           |         0           |                     nan |                 9200 |           0 |           54094 | 556466           |                   nan           |
 | AZ           |    167000           |                     nan |                 2713 |         nan |             nan | 180911           |                229000           |
 | CA           |         1.39026e+06 |                       0 |               127920 |      131019 |               0 |      2.05794e+07 |                     3.34489e+06 |
+
+## Imputation
+ I did not conduct any imputation on the missing values since the 'NaN' values represent missing data in the dataset, which could be due to various reasons like no reported outages for specific causes, irrelevance of certain causes for particular states, or gaps in the data collection process. However, having said that, either filling them with zeros or mean or median values could be valid depending on different analysis needs and goals.
+
+ ---
+
+ # Prediction Problem -- Finally 
+ ## Now that we have seen our dataset related to our initial question, "Which cause category is most responsible for power outages in different states?" We are acquainted with our dataset. 
