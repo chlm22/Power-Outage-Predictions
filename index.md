@@ -3,24 +3,27 @@
 
 ### What are we predicting? We can essentially predict anything we want to know about this dataset ! 
 
-### For this project, I am curious 
-## if we can predict the number of people affected by the power outage by seeing the cause of the outage and duration of the outage
-
+### Before we dive into predicting anything, let's explore the dataset!
 ---
 
 # Introduction
-## Let's first see what this dataset is about
-This dataset comes from Purdue University's LASCI Research Data on Power Outages and focuses on Major Power Outage Risks in the U.S. This comprehensive dataset documents power outages across various states in the continental United States. It provides information on the geographical locations of these events, regional climate data, land-use patterns, electricity consumption trends, and the economic characteristics of the states impacted by these outages. 
+## What is this dataset about? 
+This dataset comes from Purdue University's LASCI Research Data on Power Outages in the US, by state, from January 2000 to July 2016. It provides information on the geographical locations of these events, regional climate data, land-use patterns, electricity consumption trends, and the economic characteristics of the states impacted by these outages. 
 
-This dataset shows the importance of examining power outages that can have economic, social, and enfironmental impacts. Also, observing this dataset can improve the way we respond and plan for natural disasters.
+## Why is this dataset even worth looking at?
+This data can help identify and analyze past outage trends, which can help determine the outage and impact economic, social, and environmental trends. This can help improve the way we risk manage, respond and prepare for unforeseen events that can cause power outages. 
 
+## General overview of the dataset
 In total, there are 1534 rows and 55 columns (variables). 
-However, to answew our question, we can just use a couple of the columns.
+For our analysis purposes, we will only be looking at a couple of the variables
+
+---
 
 ### This chart shows the columns for analysis
 
 | Columns from Power Outage Dataset     | Description    |
 | ------------------------------------- | -------------- |
+| **YEAR**                              | Indicates the year when the outage event occurred |
 | **U.S._STATE**                        | Represents all the states in the continental U.S. |
 | **CAUSE.CATEGORY**                    | Categories of all the events causing the major power outages |
 | **OUTAGE.DURATION**                   | Duration of outage events (in minutes) |
@@ -31,28 +34,47 @@ However, to answew our question, we can just use a couple of the columns.
 
 ---
 
-
 # Dataset Cleaning 
 To use the data from the columns, we first need to clean them up.
 
 First, I dropped all the columns I will not be using for the analysis. 
-print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
+I kept only seven columns, YEAR, U.S._STATE, OUTAGE.DURATION, CAUSE.CATEGORY, CUSTOMERS.AFFECTED, TOTAL.CUSTOMERS, POPULATION
+
+
+|   YEAR | U.S._STATE   |   OUTAGE.DURATION | CAUSE.CATEGORY     |   CUSTOMERS.AFFECTED |   TOTAL.CUSTOMERS |   POPULATION |
+|-------:|:-------------|------------------:|:-------------------|---------------------:|------------------:|-------------:|
+|   2011 | Minnesota    |              3060 | severe weather     |                70000 |       2.5957e+06  |  5.34812e+06 |
+|   2014 | Minnesota    |                 1 | intentional attack |                  nan |       2.64074e+06 |  5.45712e+06 |
+|   2010 | Minnesota    |              3000 | severe weather     |                70000 |       2.5869e+06  |  5.3109e+06  |
+|   2012 | Minnesota    |              2550 | severe weather     |                68200 |       2.60681e+06 |  5.38044e+06 |
+|   2015 | Minnesota    |              1740 | severe weather     |               250000 |       2.67353e+06 |  5.48959e+06 |
+
 
 ---
 
+##
+
 <iframe
-  src="assets/file-name.html"
+  src="assets/causeCategory-Barchart.html"
   width="1000"
   height="800"
-  frameborder="10"
+  frameborder="0"
 ></iframe>
 
-###
+<iframe
+  src="assets/mapOfCustomersAffectedbyState.html"
+  width="1000"
+  height="800"
+  frameborder="0"
+></iframe>
 
-|   CUSTOMERS.AFFECTED |   TOTAL.CUSTOMERS | CAUSE.CATEGORY     | U.S._STATE   |   POPULATION |
-|---------------------:|------------------:|:-------------------|:-------------|-------------:|
-|                70000 |       2.5957e+06  | severe weather     | Minnesota    |  5.34812e+06 |
-|                  nan |       2.64074e+06 | intentional attack | Minnesota    |  5.45712e+06 |
-|                70000 |       2.5869e+06  | severe weather     | Minnesota    |  5.3109e+06  |
-|                68200 |       2.60681e+06 | severe weather     | Minnesota    |  5.38044e+06 |
-|               250000 |       2.67353e+06 | severe weather     | Minnesota    |  5.48959e+06 |
+
+<iframe
+  src="assets/customersAffectedByYearCauseCategory-LineChart.html"
+  width="1000"
+  height="800"
+  frameborder="0"
+></iframe>
+
+
+###
