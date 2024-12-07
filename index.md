@@ -70,8 +70,8 @@ I kept only seven columns, YEAR, U.S._STATE, OUTAGE.DURATION, CAUSE.CATEGORY, CU
 
 <iframe
   src="assets/customersAffectedByYearCauseCategory-LineChart.html"
-  width="800"
-  height="600"
+  width="1800"
+  height="1600"
   frameborder="0"
 ></iframe>
 
