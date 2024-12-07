@@ -71,7 +71,7 @@ This plot provides insights into the distribution of power outages by cause, whi
 <iframe
   src="assets/mapOfCustomersAffectedbyState.html"
   width="1700"
-  height="1700"
+  height="700"
   frameborder="0"
 ></iframe>
 This map allows users to visually assess which U.S. states experience the highest number of customers affected by power outages. While this map does not directly show the cause or duration of the outage, it provides a useful overview that can guide further investigation into those factors, especially in states with high outage counts.
