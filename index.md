@@ -109,8 +109,7 @@ To help us answer this after seeing the visualizations of our data, I thought it
 
 Then, I pivoted the table to better analyze the relationship between the cause categories (e.g., Weather, Human Error, Equipment Failure) and the U.S. states, showing how each cause affects the number of customers in each state.
 
-
-|   equipment failure |   fuel supply emergency |   intentional attack |   islanding |   public | U.S._STATE   |   equipment failure |   fuel supply emergency |   intentional attack |   islanding |   public appeal |   severe weather |   system operability disruption |
+| U.S._STATE   |   equipment failure |   fuel supply emergency |   intentional attack |   islanding |   public appeal |   severe weather |   system operability disruption |
 |:-------------|--------------------:|------------------------:|---------------------:|------------:|----------------:|-----------------:|--------------------------------:|
 | AK           |     14273           |                     nan |                  nan |         nan |             nan |    nan           |                   nan           |
 | AL           |       nan           |                     nan |                    0 |         nan |             nan | 471644           |                   nan           |
@@ -118,10 +117,41 @@ Then, I pivoted the table to better analyze the relationship between the cause c
 | AZ           |    167000           |                     nan |                 2713 |         nan |             nan | 180911           |                229000           |
 | CA           |         1.39026e+06 |                       0 |               127920 |      131019 |               0 |      2.05794e+07 |                     3.34489e+06 |
 
-## Imputation
+
+## Imputation & Missing Values
  I did not conduct any imputation on the missing values since the 'NaN' values represent missing data in the dataset, which could be due to various reasons like no reported outages for specific causes, irrelevance of certain causes for particular states, or gaps in the data collection process. However, having said that, either filling them with zeros or mean or median values could be valid depending on different analysis needs and goals.
 
  ---
 
  # Prediction Problem -- Finally 
- ## Now that we have seen our dataset related to our initial question, "Which cause category is most responsible for power outages in different states?" We are acquainted with our dataset. 
+ ## Now that we are acquainted with our dataset thanks to our initial question, "Which cause category is most responsible for power outages in different states?" 
+
+ ## Our real prediction question: 
+ ## **"Can we predict the number of customers affected based on the cause and duration of the outage?"**
+This question is a **regression** prediction problem.
+
+
+# Baseline Model
+**Target Variable: 'CUSTOMERS.AFFECTED'**
+
+To answer our prediction question, I want to use two key features : 
+    1. **CAUSE.CATEGORY** - Nominal feature
+    2. **OUTAGE.DURATION** - Quantitative feature 
+
+### Data Preprocessing
+**Step 1**
+- There are total of 1534 rows to work with
+- There are 443 NaN values for 'CUSTOMERS.AFFECTED'
+- There are 58 NaN values for 'OUTAGE,DURATION'
+- There are 0 NaN values for 'CAUSE.CATEGORY'
+- I will be dropping a total for 501 rows from this dataset since we do not know what
+the right answers to these NaN values of the columns will be. Also, we are trying to predict the 'CUSTOMERS.AFFECTED'; therefore, there is no point in imputing the NaN values. Trying to impute the 443 rows of 'CUSTOMERS.AFFECTED' will just lead us to inaccurate and misleading predictions. 
+- Also, the 58 NaN values of 'OUTAGE.DURATION' will also be dropped and NOT imputed because a lot of those data simply do not have any information across all columns to draw imputations from, meaning, that those rows were purposely not filled out by the dataset creators. 
+
+**Step 2**
+- CAUSE.CATEGORY needs to transformed using One-Hot Encoding
+- OUTAGE.DURATION is already a numerical feature; therefore, no need for transformations
+
+
+
+# Final Model
