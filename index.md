@@ -123,8 +123,10 @@ Then, I pivoted the table to better analyze the relationship between the cause c
 
  ---
 
- # Prediction Problem -- Finally 
- ## Now that we are acquainted with our dataset thanks to our initial question, "Which cause category is most responsible for power outages in different states?" 
+ # Prediction Problem 
+ -- Finally 
+ ## Now that we are acquainted with our dataset thanks to our initial question, 
+ ## "Which cause category is most responsible for power outages in different states?" 
 
  ## Our real prediction question: 
  ## **"Can we predict the number of customers affected based on the cause and duration of the outage?"**
@@ -132,25 +134,27 @@ This question is a **regression** prediction problem.
 
 
 # Baseline Model
+Because my prediction problem is a regression problem, I will start with using a linear regression base model with MAE, RMSE, and R^2 metrics. 
+
 **Target Variable: 'CUSTOMERS.AFFECTED'**
+### Two Features : **CAUSE.CATEGORY** - Nominal feature and **OUTAGE.DURATION** - Quantitative feature 
 
-To answer our prediction question, I want to use two key features : 
-    1. **CAUSE.CATEGORY** - Nominal feature
-    2. **OUTAGE.DURATION** - Quantitative feature 
 
-### Data Preprocessing
-**Step 1**
 - There are total of 1534 rows to work with
 - There are 443 NaN values for 'CUSTOMERS.AFFECTED'
 - There are 58 NaN values for 'OUTAGE,DURATION'
 - There are 0 NaN values for 'CAUSE.CATEGORY'
+
 - I will be dropping a total for 501 rows from this dataset since we do not know what
 the right answers to these NaN values of the columns will be. Also, we are trying to predict the 'CUSTOMERS.AFFECTED'; therefore, there is no point in imputing the NaN values. Trying to impute the 443 rows of 'CUSTOMERS.AFFECTED' will just lead us to inaccurate and misleading predictions. 
+
 - Also, the 58 NaN values of 'OUTAGE.DURATION' will also be dropped and NOT imputed because a lot of those data simply do not have any information across all columns to draw imputations from, meaning, that those rows were purposely not filled out by the dataset creators. 
 
-**Step 2**
-- CAUSE.CATEGORY needs to transformed using One-Hot Encoding
-- OUTAGE.DURATION is already a numerical feature; therefore, no need for transformations
+After running the linear regression model with pipeline preprocessing steps and fitting the LinearRegression() model, the results I got were:
+
+**Mean Absolute Error (MAE): 111903.32126078878**
+**Root Mean Squared Error (RMSE): 230339.58903807346**
+**R-squared (R²): 0.10278075225620387**
 
 
 
