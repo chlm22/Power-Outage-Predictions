@@ -66,15 +66,18 @@ I kept only seven columns, YEAR, U.S._STATE, OUTAGE.DURATION, CAUSE.CATEGORY, CU
   height="700"
   frameborder="0"
 ></iframe>
-This plot provides insights into the distribution of power outages by cause, which is an important step toward understanding how different factors might influence the number of customers affected. By examining this relationship alongside the duration of outages, it can help predict the impact of outages on customers.
+This bar chart visualizes the distribution of power outage causes by category, showing the number of outages for each cause. 
+- The x-axis represents the cause categories of power outages
+- the y-axis represents the count of outages within each category, providing a direct comparison of how often each cause contributes to power outages
+
 
 <iframe
   src="assets/mapOfCustomersAffectedbyState.html"
-  width="1700"
+  width="1500"
   height="700"
   frameborder="0"
 ></iframe>
-This map allows users to visually assess which U.S. states experience the highest number of customers affected by power outages. While this map does not directly show the cause or duration of the outage, it provides a useful overview that can guide further investigation into those factors, especially in states with high outage counts.
+This map shows how power outages, in terms of customers affected, are distributed across the U.S. states. It identifies regions where the most significant disruptions occur (e.g., high-impact states are shaded darker).
 
 
 ## Bivariant Analysis
@@ -83,11 +86,13 @@ This map allows users to visually assess which U.S. states experience the highes
 
 <iframe
   src="assets/customersAffectedByYearCauseCategory-Barchart.html"
-  width="1800"
-  height="1000"
+  width="1300"
+  height="800"
   frameborder="0"
 ></iframe>
-This bivariate visualization is key to understanding how cause categories (like weather) and year correlate with the number of customers affected. The chart provides valuable context for predicting the impact of future outages and suggests that weather will likely continue to be a major factor in large-scale outages. The fluctuation in customer impact from human error and equipment failure might also help refine predictions, but the dominance of weather suggests that weather data could be a key predictor of customer impact.
+This bar chart shows how changes in the cause of outages (across years) influence the total number of customers affected. Each bar represents a year, with the different cause categories (e.g., Weather, Human Error, Equipment Failure) stacked next to each other to show the proportion of customers affected by each cause.
+- The x-axis represents Years
+- The y-axis represents the total number of customers affected by outages
 
 ## Interesting Aggregates
 ### Remember our initial question : Which cause category is most responsible for power outages in different states?
