@@ -84,7 +84,7 @@ This map allows users to visually assess which U.S. states experience the highes
 <iframe
   src="assets/customersAffectedByYearCauseCategory-Barchart.html"
   width="1800"
-  height="1600"
+  height="1000"
   frameborder="0"
 ></iframe>
 This bivariate visualization is key to understanding how cause categories (like weather) and year correlate with the number of customers affected. The chart provides valuable context for predicting the impact of future outages and suggests that weather will likely continue to be a major factor in large-scale outages. The fluctuation in customer impact from human error and equipment failure might also help refine predictions, but the dominance of weather suggests that weather data could be a key predictor of customer impact.
