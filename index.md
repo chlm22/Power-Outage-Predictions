@@ -52,7 +52,6 @@ I kept only seven columns, YEAR, U.S._STATE, OUTAGE.DURATION, CAUSE.CATEGORY, CU
 
 ---
 
-##
 
 <iframe
   src="assets/causeCategory-Barchart.html"
@@ -63,7 +62,7 @@ I kept only seven columns, YEAR, U.S._STATE, OUTAGE.DURATION, CAUSE.CATEGORY, CU
 
 <iframe
   src="assets/mapOfCustomersAffectedbyState.html"
-  width="1000"
+  width="800"
   height="800"
   frameborder="0"
 ></iframe>
@@ -71,10 +70,8 @@ I kept only seven columns, YEAR, U.S._STATE, OUTAGE.DURATION, CAUSE.CATEGORY, CU
 
 <iframe
   src="assets/customersAffectedByYearCauseCategory-LineChart.html"
-  width="1000"
-  height="800"
+  width="8000"
+  height="600"
   frameborder="0"
 ></iframe>
 
-
-###
