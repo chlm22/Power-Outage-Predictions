@@ -55,22 +55,22 @@ I kept only seven columns, YEAR, U.S._STATE, OUTAGE.DURATION, CAUSE.CATEGORY, CU
 
 <iframe
   src="assets/causeCategory-Barchart.html"
-  width="1000"
-  height="800"
+  width="900"
+  height="700"
   frameborder="0"
 ></iframe>
 
 <iframe
   src="assets/mapOfCustomersAffectedbyState.html"
-  width="800"
-  height="800"
+  width="700"
+  height="700"
   frameborder="0"
 ></iframe>
 
 
 <iframe
   src="assets/customersAffectedByYearCauseCategory-LineChart.html"
-  width="8000"
+  width="800"
   height="600"
   frameborder="0"
 ></iframe>
