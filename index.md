@@ -62,8 +62,8 @@ I kept only seven columns, YEAR, U.S._STATE, OUTAGE.DURATION, CAUSE.CATEGORY, CU
 
 <iframe
   src="assets/mapOfCustomersAffectedbyState.html"
-  width="700"
-  height="700"
+  width="1700"
+  height="1700"
   frameborder="0"
 ></iframe>
 
