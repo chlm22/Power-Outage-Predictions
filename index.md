@@ -126,17 +126,16 @@ Then, I pivoted the table to better analyze the relationship between the cause c
  # Prediction Problem 
  Now that we are acquainted with our dataset thanks to our initial question, "Which cause category is most responsible for power outages in different states?" 
 
- ## Prediction question: 
- **"Can we predict the number of customers affected based on the cause and duration of the outage?"** This question is a **regression** prediction problem.
+ ### Prediction question
+"Can we predict the number of customers affected based on the cause and duration of the outage?"
+- This question is a **regression** prediction problem.
 
 
 # Baseline Model
 Because my prediction problem is a regression problem, I started with using a linear regression base model with Mean Absolute Error, Root Mean Squared Error, and R-squared metrics. Linear Regression assumes a linear relationship between the features and the target and the metrics gives model’s predictive performance and its ability to explain the variance in the target variable.
 
-
-**Target Variable: 'CUSTOMERS.AFFECTED'**
-
-Two Features : 
+### Target Variable: 'CUSTOMERS.AFFECTED'
+### Two Features: 
 1. **CAUSE.CATEGORY** (Nominal feature) 
 2. **OUTAGE.DURATION** (Quantitative feature) 
 
@@ -148,9 +147,9 @@ Two Features :
 - I have set my code to train on 80% of the rows (844 rows) and test on 20% of the rows (212rows)
 
 ### Baseline Model Metric Results: 
-**Mean Absolute Error (MAE): 129084.54289691892**
-**Root Mean Squared Error (RMSE): 302647.37444542814**
-**R-squared (R^2): 0.13119692403417982**
+- **Mean Absolute Error (MAE): 129084.54289691892**
+- **Root Mean Squared Error (RMSE): 302647.37444542814**
+- **R-squared (R^2): 0.13119692403417982**
 
 These performance results are **BAD**. 
 Mean Absolute Error shows that the predictions are off by about 129,084 customers. This is a significant amount, suggesting that the model isn't providing accurate predictions.
@@ -186,9 +185,7 @@ Since my results from my baseline model was so poor, I decided to make my own co
 - According to **GeeksforGeeks** "Hyperparameter tuning is the process of selecting the optimal values for a machine learning model’s hyperparameters."
 
 
-### Hyperparameter & Best Parameter
-
-### Hyperparameter Grid 
+### Hyperparameter, Best Parameter, GridSearchCV
 **n_estimators = [50, 100, 200]:**
 - Testing multiple values of n_estimators helps find the optimal number of trees 
 - 50 trees - Faster training and less computationally expensive
@@ -205,14 +202,11 @@ Since my results from my baseline model was so poor, I decided to make my own co
 - Using the square root of the number of features lead to a good model performance
 - Helps to reduce overfitting
 
-### Hyperparameter tuning with GridSearchCV
 
 # Final Model Metric Results: 
-**Mean Absolute Error (MAE): 63804.31157813248**
-**Root Mean Squared Error (RMSE): 174916.45915436902**
-**R-squared (R^2): 0.7097923321184068**
-
-
+- **Mean Absolute Error (MAE): 63804.31157813248**
+- **Root Mean Squared Error (RMSE): 174916.45915436902**
+- **R-squared (R^2): 0.7097923321184068**
 
 <iframe
   src="assets/comparison_side_by_side.html"
